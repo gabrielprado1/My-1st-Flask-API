@@ -1,0 +1,21 @@
+[project]
+name = "flask1"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "gabs",email = "1gabrielbprado@gmail.com"}
+]
+requires-python = ">=3.13, <4.0"
+dependencies = [
+    "flask>=2.3,<4.0",
+    "flask-sqlalchemy>=3.1,<4.0",
+    "flask-migrate>=4.0,<5.0",
+    "flask-jwt-extended>=4.6,<5.0",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
