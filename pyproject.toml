@@ -3,7 +3,7 @@ name = "flask1"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "gabs",email = "1gabrielbprado@gmail.com"}
+    {name = "gabs",email = "1gbpr@gmail.com"}
 ]
 requires-python = ">=3.13, <4.0"
 dependencies = [

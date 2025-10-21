@@ -1,5 +1,7 @@
 import pytest
 from src.app import create_app, db, User, Role
+from werkzeug.security import generate_password_hash
+from http import HTTPStatus
 
 @pytest.fixture
 def app():
@@ -25,12 +27,15 @@ def access_token(client):
     db.session.add(role)
     db.session.commit()
 
-    user = User(username="aaron-summers", password="test", role_id= role.id)
+    hashed_password = generate_password_hash("test")
+    user = User(username="aaron-summers", password=hashed_password, role_id= role.id)
     db.session.add(user)
     db.session.commit()
 
-    response = client.post('/auth/login', json={'username': user.username, "password": user.password})
+    response = client.post('/auth/login', json={'username': user.username, "password": "test"})
     
+    assert response.status_code == HTTPStatus.OK, f"Login falhou no fixture: {response.json}"
+
     return response.json['access_token']
 
     
