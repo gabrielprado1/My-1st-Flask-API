@@ -42,7 +42,7 @@ def _list_users():
         {
             "id": user.id,
             "username": user.username,
-            "role": { "id": user.role.id, "name": user.role.name } if user.role else None
+            "role": {"id": user.role.id, "name": user.role.name} if user.role else None
         }
         for user in users
     ]

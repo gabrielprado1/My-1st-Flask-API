@@ -2,7 +2,6 @@ from flask import Blueprint, request
 from src.models.user import User
 from src.models.base import db
 from http import HTTPStatus
-from sqlalchemy import inspect
 from flask_jwt_extended import JWTManager, create_access_token
 from werkzeug.security import check_password_hash
 
